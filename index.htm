@@ -18,7 +18,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="page-scroll" href="#page-top">
+                <a class="page-scroll" href="index.htm">
                     <img id="logo" class="navbar-brand" src="bess_logo.PNG"/>
                     <div class="navbar-text">
                     <h3 id="name">Black Enginering Student Society</h3></a>
@@ -34,16 +34,19 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About Us</a>
+                        <a class="page-scroll" href="index.htm#page-top">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download">Eboard</a>
+                        <a class="page-scroll" href="about.htm">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#calendar">Calendar</a>
+                        <a class="page-scroll" href="eboard.htm">Eboard</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#wkevents">Weekly Events</a>
+                        <a class="page-scroll" href="events.htm">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.htm#sponsors">Sponsors</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact Us</a>
@@ -56,7 +59,7 @@
     </nav>
     
 
-   <div class="container-fluid">
+   <div id="page-top" class="container-fluid">
 
       <!-- Carousel -->
       <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
@@ -97,15 +100,16 @@
             <h1>We are a community</h1>        
             <h3>of engineers, scientists, and artists</h3>
         </hgroup>
-        <button class="btn btn-hero btn-lg" role="button">Learn More</button>
+        <a class="btn btn-hero btn-lg" href="#mission">Learn More</a>
       </div>
     </div>
   </div> 
 </div>
 </div>
 <hr>
-<div class="container">
-	<p class="mission">“To increase the number of culturally responsible black engineers who excel academically, succeed professionally and positively impact the community.”</p>
+<div id="mission" class="container mission">
+  <h2><strong>The mission of the National Society of Black Engineers is...</strong></h2>
+	<p>“to increase the number of culturally responsible black engineers who excel academically, succeed professionally and positively impact the community.”</p>
 </div>
    <hr>
       <!-- Example row of columns -->
@@ -116,13 +120,13 @@
 	      	<i class="fa fa-users fa-4x"></i>
 			<h3>Join</h3>
 			<p>Becoming a member is easy. You will be able to attend conferences, receive discounts on computers, and much more.  </p>
-			<p><a href="#">Become a member</a></p>
+			<p><a href="http://www.nsbe.org/Membership.aspx#.VfdLGvlViko">Become a member</a></p>
 	      </div>
 		  <div class="col-md-4">
 		  	<i class="fa fa-hand-paper-o fa-4x"></i>
 			<h3>Volunteer</h3>
 			<p>Want to make an impact? We have plenty of opportunites to volunteer and make a difference in the community.</p>
-			<p><a href="#">Learn more about volunteering</a></p>
+			<p><a href="events.htm#volunteer">Learn more about volunteering</a></p>
 		  </div>
 		  <div class="col-md-4">
 		  	<i class="fa fa-money fa-4x"></i>
@@ -134,10 +138,10 @@
 	  </div>
 	</div>
 	<hr>
-<div class="sponsers">
+<div id="sponsors">
         <div class="container">
             <h2>Sponsors</h2>
-            <p>Our attendance at conferences wouldn't be possible without the generous support of our sponsers. Want to help nurture the next generation of culturaly responsible black engineers who excel academically, succeed professionally and positively impact the community? Become a sponser <a href="#">here.</a></p>
+            <p>Our attendance at conferences wouldn't be possible without the generous support of our sponsers. Want to help nurture the next generation of culturaly responsible black engineers who excel academically, succeed professionally and positively impact the community? Become a sponsor <a href="#">here.</a></p>
             <div class="row">
                 <div class="col-md-4">
                     <div class="thumbnail">
@@ -175,10 +179,25 @@
       </footer>
 
     </div> <!-- /container -->
-</container>
 <script type="text/javascript">
 $('.carousel').carousel({
   wrap: false
+});
+</script>
+<script type="text/javascript">
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 135
+        }, 1000);
+        return false;
+      }
+    }
+  });
 });
 </script>
 </body>
